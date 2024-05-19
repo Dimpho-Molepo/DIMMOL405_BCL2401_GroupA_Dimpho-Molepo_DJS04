@@ -78,7 +78,13 @@ class BookPreview extends HTMLElement {
         shadow.append(template.content.cloneNode(true))
     }
 
-
+    connectedCallback() {
+        const shadow = this.shadowRoot;
+        shadow.querySelector('.preview__image').src = this.getAttribute('image');
+        shadow.querySelector('.preview__title').innerText = this.getAttribute('title');
+        shadow.querySelector('.preview__author').innerText = this.getAttribute('author');
+        shadow.querySelector('.preview').setAttribute('data-preview', this.getAttribute('id'));
+    }
 }
 
 /** Creates a preview button element for a book.
