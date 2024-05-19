@@ -1,6 +1,15 @@
 import { books, authors, BOOKS_PER_PAGE } from "./data.js";
 import { elementsFromDOM } from "./elements.js";
 
+class BookPreview extends HTMLElement {
+    constructor() {
+        super();
+        const shadow = this.attachShadow({ mode: 'open' });
+    }
+
+
+}
+
 /** Creates a preview button element for a book.
  *
  * @param {Object} books - The books object containing the author, id, image, and title properties.
