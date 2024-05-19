@@ -6,6 +6,10 @@ class BookPreview extends HTMLElement {
     constructor() {
         super();
         const shadow = this.attachShadow({ mode: 'open' });
+        const author = this.getAttribute('author');
+        const id = this.getAttribute('id');
+        const image = this.getAttribute('image');
+        const title = this.getAttribute('title');
         
         const template = document.createElement('template');
         template.innerHTML = `
@@ -67,15 +71,15 @@ class BookPreview extends HTMLElement {
                     color: rgba(var(--color-dark), 0.4);
                 }
             </style>
-            <button class="preview">
-                <img class="preview__image" />
+            <button class="preview" data-preview="${id}">
+                <img class="preview__image" src="${image}" alt="${title}" />
                 <div class="preview__info">
-                    <h3 class="preview__title"></h3>
-                    <div class="preview__author"></div>
+                    <h3 class="preview__title">${title}</h3>
+                    <div class="preview__author">${authors[author]}</div>
                 </div>
             </button>
         `;
-
+        
         shadow.append(template.content.cloneNode(true))
     }
 
