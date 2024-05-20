@@ -104,21 +104,6 @@ customElements.define('book-preview', BookPreview)
  * @returns {HTMLButtonElement} returns the button element
 */
 export function createPreviewButton({ author, id, image, title }) {
-    // const element = document.createElement("book-preview");
-    // element.classList = "preview";
-    // element.setAttribute("data-preview", id);
-
-    // element.innerHTML = `
-    //     <img
-    //         class="preview__image"
-    //         src="${image}"
-    //     />
-                
-    //     <div class="preview__info">
-    //         <h3 class="preview__title">${title}</h3>
-    //         <div class="preview__author">${authors[author]}</div>
-    //     </div>
-    // `;
     const element = document.createElement('book-preview');
     element.setAttribute('image',image);
     element.setAttribute('title', title);
