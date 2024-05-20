@@ -119,7 +119,7 @@ export function createPreviewButton({ author, id, image, title }) {
 export function renderBooks() {
     const starting = document.createDocumentFragment();
   
-    for (const { id, image, title, author } of books.slice(0,+ BOOKS_PER_PAGE)) {
+    for (const { id, image, title, author } of books.slice(0, BOOKS_PER_PAGE)) {
       const element = createPreviewButton({ id, image, title, author });
       starting.appendChild(element);
     }
